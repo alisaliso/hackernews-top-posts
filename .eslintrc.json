@@ -1,0 +1,54 @@
+{
+  "extends": ["prettier"],
+  "plugins": [
+    "prettier",
+    "unused-imports",
+    "react",
+    "react-hooks",
+    "simple-import-sort",
+    "@typescript-eslint",
+    "import"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "simple-import-sort/exports": "error",
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "no-throw-literal": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "prettier/prettier": "error",
+    "curly": "error",
+    "no-duplicate-imports": "error",
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": ["if", "for", "default", "const", "let"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let"],
+        "next": ["const", "let"]
+      },
+      { "blankLine": "always", "prev": "*", "next": ["if"] }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always-and-inside-groups",
+        "warnOnUnassignedImports": true,
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
+    "import/no-useless-path-segments": ["error", { "noUselessIndex": false }]
+  }
+}
